@@ -24,7 +24,7 @@ class AdminMiddleware
         }
 
         $decode = JWT::decode($jwt, new Key(env('JWT_SECRET_KEY'), 'HS256'));
-        var_dump($decode);
+        
         if ($decode->role == 'admin'||$decode->role == 'user') {
             return $next($request);
         } 

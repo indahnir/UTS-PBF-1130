@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "34f48e34-d9b1-4c14-bc45-d8f953ad6124",
+		"name": "Collection API UTS Pem. Web Framework 20232",
+		"description": "Collection ini digunakan mahasiswa untuk testing API yang akan mahasiswa buat untuk pengerjaan soal UTS (**jangan di otak-atik field body nya**).\n\nKami sebagai dosen pengampu matakuliah akan menggunakan collection API ini untuk memudahkan proses penilaian, sehingga mahasiswa bisa mengetahui berapa nilai UTS yang didapat hanya dengan melakukan pemeriksaan kesesuaian antara API yang dibuat dengan request-response dari collection API ini. Untuk memudahkan penggunaaan collection API serta **SYARAT NILAI** ini ikuti aturan-aturan berikut:\n\n1. **WAJIB HOSTING**, berbayar atau tidak dipersilahkan asalkan pada saat penilaian API dapat berjalan dengan baik. Kegagalan request-response API karena permasalahan hosting diluar tanggung jawab dosen pengampu dan sudah dipastikan dapat nilai 0.\n2. **WAJIB DOMAIN**, boleh menggunakan sub-domain sehingga bisa membeli domain secara kolektif.\n3. Pada collection terdapat beberapa simbol seperti berikut, **yang mana simbol ini harus mahasiswa ganti sesuai dengan API yang mahasiswa buat**:\n    1. **{{baseUrl}}** : nama domain boleh menggunakan http atau https\n    2. **{{jwtToken}}** : token JWT untuk otentikasi dan otorisasi (segmentasi role admin dan user)\n    3. **{{id}}** : id untuk melakukan edit ataupun delete, id: 1, 2, 3, dst\n    4. \"isi kan bla bla bla\" : isi kan inputan sesuai dengan seharusnya (boleh dimodifikasi inputannya untuk cek validasi inputan)\n4. **WAJIB GUNAKAN VALIDASI INPUTAN**\n5. **WAJIB LARAVEL**\n    \n\n**Apa yang harus saya penuhi untuk dapat nilai UTS?**\n\n1. Pengumpulan dan presensi wajib di BOC (ketentuan fakultas tidak bisa kompromi)\n2. Tidak melanggar aturan-aturan diatas\n3. Pengumpulan UTS berupa **link source code project UTS di github/gitlab/bitbucket (public bukan hasil kompresi seperti zip/rar), dan alamat domain**\n4. Melebihi batas waktu pengumpulan dianggap tidak mengikuti UTS\n    \n\n> Merugilah dia yang mencontek dan/atau memberi contekan kepada orang lain. Karena sesungguhnya dia telah membodohi dirinya sendiri serta orang lain.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33381190"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDIyNzE4LCJleHAiOjE3MTYwMjYzMTh9.bZYBWqq9u3GI3QBX9JIgSceRkj03P9QV7WqveypiMZc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "melihat semua kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDIyNzE4LCJleHAiOjE3MTYwMjYzMTh9.bZYBWqq9u3GI3QBX9JIgSceRkj03P9QV7WqveypiMZc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"dessert\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/categories",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						},
+						"description": "membuat kategori"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDE4MzE2LCJleHAiOjE3MTYwMjE5MTZ9.zZliys7cxct2zenZFsy5meACtNduEdh9j2WUsRRRDII",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"food\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/categories/1",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						},
+						"description": "menyunting kategori sesuai id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDIyNzE4LCJleHAiOjE3MTYwMjYzMTh9.bZYBWqq9u3GI3QBX9JIgSceRkj03P9QV7WqveypiMZc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/categories/3",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"categories",
+								"3"
+							]
+						},
+						"description": "menghapus kategori sesuai dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "kelola kategori produk"
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "read",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDEzNDEyLCJleHAiOjE3MTYwMTcwMTJ9._gOlbq8q56i_VkCrMFzH0kvr64_fzctTsfx-g5caSls",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "melihat semua data produk"
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDIyNzE4LCJleHAiOjE3MTYwMjYzMTh9.bZYBWqq9u3GI3QBX9JIgSceRkj03P9QV7WqveypiMZc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemontea",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "drink",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "beverage",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "2-3-25",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": "postman-cloud:///1ef14ed3-f137-4860-93a0-9d6700224fb7"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/products",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "membuat data produk baru"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDE4MzE2LCJleHAiOjE3MTYwMjE5MTZ9.zZliys7cxct2zenZFsy5meACtNduEdh9j2WUsRRRDII",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "dimsum",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dish",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "food",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "04-12-25",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "upload gambar produk",
+									"type": "file",
+									"src": "postman-cloud:///1ef14f29-1175-4000-847a-2636e6afc7b9"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/products/1",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						},
+						"description": "menyunting data produk sesuai dengan id yang dipilih"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IklOREFIIE5JUk1BTEEgU1VLTUFOSU5HVFlBUyBVQlBLQVJBV0FORyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzE2MDIyNzE4LCJleHAiOjE3MTYwMjYzMTh9.bZYBWqq9u3GI3QBX9JIgSceRkj03P9QV7WqveypiMZc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{jwtToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/products/2",
+							"protocol": "https",
+							"host": [
+								"utspbfindah1130",
+								"sistemapotekmitragaluh",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						},
+						"description": "menghapus data produk dengan id yang dipilih"
+					},
+					"response": []
+				}
+			],
+			"description": "mengelola data produk"
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"indah\",\r\n    \"email\":\"indah@gmail.com\",\r\n    \"password\": \"indahnirmala\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/register",
+					"protocol": "https",
+					"host": [
+						"utspbfindah1130",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "registrasi akun"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@mail.com\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/login",
+					"protocol": "https",
+					"host": [
+						"utspbfindah1130",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register with oauth google",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://utspbfindah1130.sistemapotekmitragaluh.com/api/oauth/register",
+					"protocol": "https",
+					"host": [
+						"utspbfindah1130",
+						"sistemapotekmitragaluh",
+						"com"
+					],
+					"path": [
+						"api",
+						"oauth",
+						"register"
+					]
+				},
+				"description": "registrasi akun baru menggunakan google oauth (install laravel socialite)"
+			},
+			"response": []
+		}
+	]
+}

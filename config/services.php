@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'https://utspbfindah1130.sistemapotekmitragaluh.com/api/auth/google/call-back',
+        'redirect' => 'https://utspbfindah1130.sistemapotekmitragaluh.com/api/oauth/register/call-back',
     ],
 
 ];

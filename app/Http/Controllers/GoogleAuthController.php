@@ -16,7 +16,7 @@ class GoogleAuthController extends Controller
     {
         $parameters = [
             'client_id' => env('GOOGLE_CLIENT_ID'),
-            'redirect_uri' => 'http://127.0.0.1:8000/api/auth/google/call-back',
+            'redirect_uri' => 'https://utspbfindah1130.sistemapotekmitragaluh.com/api/oauth/register/call-back',
             'response_type' => 'code',
             'scope' => 'email profile',
             'access_type' => 'offline',
@@ -45,7 +45,7 @@ class GoogleAuthController extends Controller
                     'code' => $code,
                     'client_id' => env('GOOGLE_CLIENT_ID'),
                     'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-                    'redirect_uri' => 'https://utspbfindah1130.sistemapotekmitragaluh.com/api/auth/google/call-back',
+                    'redirect_uri' => 'https://utspbfindah1130.sistemapotekmitragaluh.com/api/oauth/register/call-back',
                     'grant_type' => 'authorization_code',
                     'access_type' => 'offline',
                 ],
